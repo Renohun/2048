@@ -1,0 +1,68 @@
+table {
+    background-color: white;
+    height: 800px;
+    width: 800px;
+    border: 2pt solid white;
+}
+tr td {
+    border: 3px solid white;
+}
+td{
+    text-align: center;
+
+    background-color: gray;
+    color: aliceblue;
+    height: 50px;
+    width: 50px;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+body{
+    background-color: black;
+    color: aliceblue;
+}
+p{
+    font-size: x-large;
+    font-weight: bolder;
+}
+#main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.elso{
+    background-color: #eee4da;
+}
+.masodik
+{
+    background-color: #ede0c8;
+}
+.harmadik{
+    background-color: #f2b179;
+}
+.negyedik{
+    background-color: #f59563;
+}
+.otodik{
+    background-color: #f67c5f;
+}
+.hatodik{
+    background-color: #f65e3b;
+}
+.hetedik{
+    background-color: #edcf72;
+}
+.nyolcadik{
+    background-color: #edcc61;
+}
+.kilencedik{
+    background-color: #edc850;
+}
+.tizedik{
+    background-color: #edc53f;
+}
+.tizenegyedik{
+    background-color: #edc22e;
+}
