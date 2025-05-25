@@ -135,9 +135,36 @@ document.addEventListener("DOMContentLoaded", function(){
                         cella.className = ""; // torlom a szineket 
                     }
             }
-            UjRandomSzam(matrix) // uj szam hozzaadasa
+            
+            if(UjRandomSzam(matrix))
+            {
+                let celladb = 0
 
-            szinezes(matrix)
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+                        if(matrix[i][j] != "2048"){
+                            celladb++
+                        }
+                    }
+                }
+                if(celladb == 16){ alert("Vesztettel, nem erted el a 2048at es minden cella betelt mar"); szinezes(matrix) } else{ alert("Gyoztel elerted a 2048-at"); szinezes(matrix) }
+            }
+            else
+            {
+                szinezes(matrix)
+
+                //Gyozelmi kondicio
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+
+                        if(matrix[i][j] == "2048"){
+                            alert("Gyoztel elerted a 2048-at")
+                            return
+                        }
+                    }
+                }
+            }
+            
         }
         else if (gomb.key === "s") 
         {
@@ -169,9 +196,34 @@ document.addEventListener("DOMContentLoaded", function(){
                     cella.className = ""; 
                 }
             }
-            UjRandomSzam(matrix) // uj szam hozzaadasa
-            
-            szinezes(matrix); 
+            if(UjRandomSzam(matrix))
+            {
+                let celladb = 0
+
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+                        if(matrix[i][j] != "2048"){
+                            celladb++
+                        }
+                    }
+                }
+                if(celladb == 16){ alert("Vesztettel, nem erted el a 2048at es minden cella betelt mar"); szinezes(matrix) } else{ alert("Gyoztel elerted a 2048-at"); szinezes(matrix) }
+            }
+            else
+            {
+                szinezes(matrix)
+
+                //Gyozelmi kondicio
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+
+                        if(matrix[i][j] == "2048"){
+                            alert("Gyoztel elerted a 2048-at")
+                            return
+                        }
+                    }
+                }
+            }
         }
         else if (gomb.key === "d") 
         {
@@ -200,9 +252,34 @@ document.addEventListener("DOMContentLoaded", function(){
                     cella.className = "";
                 }
             }
-            UjRandomSzam(matrix) // uj szam hozzaadasa
+            if(UjRandomSzam(matrix))
+            {
+                let celladb = 0
 
-            szinezes(matrix);
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+                        if(matrix[i][j] != "2048"){
+                            celladb++
+                        }
+                    }
+                }
+                if(celladb == 16){ alert("Vesztettel, nem erted el a 2048at es minden cella betelt mar"); szinezes(matrix) } else{ alert("Gyoztel elerted a 2048-at"); szinezes(matrix) }
+            }
+            else
+            {
+                szinezes(matrix)
+
+                //Gyozelmi kondicio
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+
+                        if(matrix[i][j] == "2048"){
+                            alert("Gyoztel elerted a 2048-at")
+                            return
+                        }
+                    }
+                }
+            }
         }
 
         if (gomb.key === "a") 
@@ -235,12 +312,35 @@ document.addEventListener("DOMContentLoaded", function(){
                     cella.className = "";
                 }
             }
-            UjRandomSzam(matrix) // uj szam hozzaadasa
+            if(UjRandomSzam(matrix))
+            {
+                let celladb = 0
 
-            szinezes(matrix);
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+                        if(matrix[i][j] != "2048"){
+                            celladb++
+                        }
+                    }
+                }
+                if(celladb == 16){ alert("Vesztettel, nem erted el a 2048at es minden cella betelt mar"); szinezes(matrix) } else{ alert("Gyoztel elerted a 2048-at"); szinezes(matrix) }
+            }
+            else
+            {
+                szinezes(matrix)
+
+                //Gyozelmi kondicio
+                for(let i = 0; i < matrix.length; i++){
+                    for(let j = 0; j < matrix[i].length; j++){
+
+                        if(matrix[i][j] == "2048"){
+                            alert("Gyoztel elerted a 2048-at")
+                            return
+                        }
+                    }
+                }
+            }
         }
-
-
     })
 
     console.log(matrix)
@@ -302,6 +402,8 @@ function szinezes(matrix){
 function UjRandomSzam(matrix){
     
     console.log(matrix)
+
+    let VeresegCheck = false
 
     let uresTomb = []
 
@@ -369,7 +471,7 @@ function UjRandomSzam(matrix){
 
             }while(!Ures)
         }
-    }else{ return }
+    }else{ VeresegCheck = true; return VeresegCheck} // hogy ne csinaljunk egy vegtelen ciklust, igy nem crashel
 
     /* Ez egy szar megoldas
     let uresTomb = []
@@ -423,4 +525,5 @@ function UjRandomSzam(matrix){
 
         }while(!talalt)
     }*/
+
 }
